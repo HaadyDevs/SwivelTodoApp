@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "977899920394",
+    "project_id": "swiveltodoapp",
+    "storage_bucket": "swiveltodoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977899920394:android:b30110bff91b85d33653f3",
+        "android_client_info": {
+          "package_name": "com.todoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977899920394-a9sv12mhajfp8i32lg72rt8mtklpb3ur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.todoapp",
+            "certificate_hash": "125028c59d35bb9712f9579cfbad78ee7f8a608e"
+          }
+        },
+        {
+          "client_id": "977899920394-fjconatodbgndvch8gmnsvanrdfgpigi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7hPKWPjRzy7jE0xe3j_yEVDXi-Xppha0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977899920394-fjconatodbgndvch8gmnsvanrdfgpigi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
