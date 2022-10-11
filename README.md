@@ -34,11 +34,11 @@ The project uses atomic design principles and container component architecture. 
 2. Open a terminal / Command Prompt on the project directory
 3. Run command "npm install" 
 4. On the same terminal or if you wish to, On a different one, run command "npx react-native start" to start the Metro server
-5. On a different terminal, run command "npx react-native run-android" to run the application
+5. Make sure you have an emulator open or a device connected to your machine with "USB Debugging" turned on
+6. On a different terminal, run command "npx react-native run-android" to run the application
 
 ## Credentials to Login
-Username : abdulhaady@gmail.com
-Password: Haady@123
+Username : abdulhaady@gmail.com  Password: Haady@123
 
     
     
