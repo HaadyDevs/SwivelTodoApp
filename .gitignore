@@ -124,5 +124,8 @@ package-lock.json
 .vscode
 .vs
 
+# CocoaPods
+/ios/Pods/
+
 # Android memory profiler files
 *.hprof
