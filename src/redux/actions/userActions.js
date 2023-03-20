@@ -1,4 +1,5 @@
 import {getLocalData, setLocalData} from '../../services/localstorageService';
+import crashlytics from '@react-native-firebase/crashlytics';
 import {
   ADD_PIC,
   CHANGE_NAME,
