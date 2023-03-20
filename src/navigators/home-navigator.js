@@ -17,7 +17,8 @@ const HomeTab = createBottomTabNavigator();
 
 export default function HomeNavigator() {
   return (
-    <HomeTab.Navigator
+    // Tab Navigator Setup for Home screen
+    <HomeTab.Navigator 
       screenOptions={{
         tabBarStyle: {
           height: 60,

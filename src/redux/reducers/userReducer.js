@@ -18,6 +18,7 @@ const userAuthState = {
   isLoggedIn: false,
 };
 
+// User Reducers
 export default userReducer = (state = userAuthState, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:

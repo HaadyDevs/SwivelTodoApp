@@ -21,6 +21,7 @@ export default function ProfileScreen({navigation}) {
   const userData = useSelector(state => state.user);
   console.log('User Data is ' + JSON.stringify(userData));
 
+  // Get Image from gallery
   const onProfilePicChange = async () => {
     const imageResponse = await launchImageLibrary(imageSelectionOptions);
     const selectedImageUri = imageResponse.assets[0].uri;

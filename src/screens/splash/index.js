@@ -4,9 +4,11 @@ import LogoTitle from '../../components/atoms/logo-title';
 import {PRIMARY, WHITE} from '../../styles/colors';
 
 export default function SplashScreen({navigation}) {
+
+  // Navigate to login screen from splash after timeout
   setTimeout(() => {
     navigation.replace('/login');
-  }, 2000);
+  }, 4000);
 
   return (
     <View style={styles.viewContainer}>

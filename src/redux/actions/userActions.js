@@ -10,6 +10,7 @@ import {
 } from './constants';
 import auth from '@react-native-firebase/auth';
 
+// Change the image of the user to provided image
 export const ChangePicture = imageUri => (dispatch, getState) => {
   const {user} = getState();
   user.imageUri = imageUri;
@@ -22,6 +23,7 @@ export const ChangePicture = imageUri => (dispatch, getState) => {
   });
 };
 
+// Change the username of the user to provided image
 export const ChangeUsername = username => (dispatch, getState) => {
   const {user} = getState();
   user.username = username;
@@ -34,6 +36,7 @@ export const ChangeUsername = username => (dispatch, getState) => {
   });
 };
 
+
 export const SignOut = () => async (dispatch, getState) => {
   setLocalData('user', null);
 
@@ -43,6 +46,7 @@ export const SignOut = () => async (dispatch, getState) => {
   });
 };
 
+// Get user data from local storage
 export const GetUserData = () => async (dispatch, getState) => {
   const userData = await getLocalData('user');
   if (userData != null) {
@@ -53,21 +57,32 @@ export const GetUserData = () => async (dispatch, getState) => {
   }
 };
 
+// Login user using Firebase sign in method
 export const Login = credentials => async (dispatch, getState) => {
+  crashlytics().log('User Signed in');
   dispatch({type: LOADING, payload: null});
-  await auth()
+  try {
+    await auth()
     .signInWithEmailAndPassword(credentials.username, credentials.password)
     .then(user => {
       dispatch({
         type: LOGIN_SUCCESS,
         payload: user.user.email,
       });
-      console.log('LOGGED INN ' + JSON.stringify(user));
     })
     .catch(error => {
+      crashlytics().recordError(error);
       dispatch({
         type: LOGIN_FAILED,
         payload: null,
       });
     });
+  } catch (error) {
+    crashlytics().recordError(error);
+    dispatch({
+      type: LOGIN_FAILED,
+      payload: null,
+    });
+  }
+  
 };

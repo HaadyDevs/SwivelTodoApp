@@ -34,6 +34,7 @@ export default function LoginScreen({navigation}) {
   const dispatch = useDispatch();
   const userData = useSelector(state => state.user);
 
+  // Navigate to home screen based on user login status
   useEffect(() => {
     if (userData.isLoggedIn) {
       setisError(false);

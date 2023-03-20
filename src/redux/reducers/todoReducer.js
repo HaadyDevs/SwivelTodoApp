@@ -7,6 +7,7 @@ import {
   GET_TODOS,
 } from '../actions/constants';
 
+//Todo Reducers
 export default todoReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_TODO:

@@ -7,6 +7,7 @@ import {
   GET_TODOS,
 } from './constants';
 
+// Add Todo under existing date if there is already a todo for that date. Or add to a new date
 export const AddTodo = todo => async (dispatch, getState) => {
   const {content, date} = todo;
   const {todos} = getState();
@@ -45,6 +46,7 @@ export const AddTodo = todo => async (dispatch, getState) => {
   });
 };
 
+// Delete Todo under existing date if there is more than 1 todo for that date. Or delete the entire date
 export const DeleteTodo = (date, todoIndex) => async (dispatch, getState) => {
   const {todos} = getState();
   let newState = {};
@@ -72,13 +74,7 @@ export const DeleteTodo = (date, todoIndex) => async (dispatch, getState) => {
         new Date(todo.title).toDateString() == new Date(date).toDateString(),
     )['data'] = updatedArray;
   }
-
-  console.log('UPDATED DETELED ARRAY IS ' + JSON.stringify(updatedArray));
-
   newState = todos;
-
-  console.log('DELETED DATA IS ' + JSON.stringify(newState));
-
   setLocalData('todos', newState);
 
   dispatch({
@@ -87,6 +83,7 @@ export const DeleteTodo = (date, todoIndex) => async (dispatch, getState) => {
   });
 };
 
+// Edit todo by finding it with specific todo id
 export const EditTodo = editData => async (dispatch, getState) => {
   const {content, date, index} = editData;
   const {todos} = getState();
@@ -105,6 +102,7 @@ export const EditTodo = editData => async (dispatch, getState) => {
   });
 };
 
+// Fetch all the todos from local data
 export const FetchTodos = () => async dispatch => {
   const getTodoData = await getLocalData('todos');
   if (getTodoData != null) {
@@ -115,6 +113,7 @@ export const FetchTodos = () => async dispatch => {
   }
 };
 
+// Erase all todos
 export const EraseTodos = () => async dispatch => {
   setLocalData('todos', null);
   dispatch({
